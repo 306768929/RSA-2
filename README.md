@@ -9,3 +9,4 @@ added docblock
 added namespace
 removed some parameters for the use of easy.
 beautified function names, parameters, according to coding standarts.
+fixed some php notices according to stability and error performance problems.
