@@ -160,9 +160,14 @@ class RSA{
         for($i=0; $i<$packets; $i++){
             $packet = substr($m, $i*$s, $s);
             $code   = '0';
-
+            
             for($j=0; $j<$s; $j++){
-                $code = bcadd($code, bcmul(ord($packet[$j]), bcpow('256',$j)));
+            	if(isset($packet[$j])){
+            		$left_operand = ord($packet[$j]);
+            	}else{
+            		$left_operand = 0;
+            	}
+            	$code = bcadd($code, bcmul($left_operand, bcpow('256',$j)));
             }
 
             $code   = bcpowmod($code, $e, $n);
