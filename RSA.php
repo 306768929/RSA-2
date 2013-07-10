@@ -190,7 +190,8 @@ class RSA{
     	}
     	$d = $this->_keys[2];
     	$n = $this->_keys[0];
-        $coded   = split(' ', $c);
+        $coded   = explode(' ', $c);
+        
         $message = '';
         $max     = count($coded);
 
